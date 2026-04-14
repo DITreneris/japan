@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Japan</title>
+    <meta name="description" content="GitHub Pages deployment scaffold." />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0b0f19;
+        --fg: #e8eefc;
+        --muted: #a9b4cc;
+        --card: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.14);
+        --accent: #7aa7ff;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f7f8fb;
+          --fg: #121522;
+          --muted: #4b556a;
+          --card: rgba(0, 0, 0, 0.04);
+          --border: rgba(0, 0, 0, 0.12);
+          --accent: #1f57ff;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans",
+          sans-serif;
+        background: radial-gradient(1200px 600px at 20% 0%, rgba(122, 167, 255, 0.25), transparent 60%),
+          radial-gradient(900px 500px at 90% 20%, rgba(255, 122, 229, 0.18), transparent 55%),
+          var(--bg);
+        color: var(--fg);
+      }
+      main { max-width: 860px; margin: 0 auto; padding: 56px 20px; }
+      .card {
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: 16px;
+        padding: 22px 20px;
+        backdrop-filter: blur(10px);
+      }
+      h1 { margin: 0 0 10px; font-size: 34px; letter-spacing: -0.02em; }
+      p { margin: 8px 0; color: var(--muted); line-height: 1.55; }
+      a { color: var(--accent); text-underline-offset: 3px; }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+      .hint { margin-top: 14px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <h1>Japan</h1>
+        <p>This is a minimal GitHub Pages scaffold.</p>
+        <p class="hint">
+          Next: push to <code>main</code>, then enable
+          <strong>Settings → Pages → Source: GitHub Actions</strong>.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
+
