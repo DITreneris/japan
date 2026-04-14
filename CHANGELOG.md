@@ -14,6 +14,10 @@ Kolonėlės (Prideta / Pakeista / …) pildomos iki kito semver release; paskuti
 - Root `/` redirect: numatytas nukreipimas į `/ja/`; jei `localStorage.lang` yra `lt|et|lv` – map’inama į `/en/`.
 - Generatorius: `npm run generate:et-lv` atnaujintas, kad ET/LV/JA puslapiuose nav nebeįrašytų LT/ET/LV kalbų į switcher.
 - Testai: struktūriniai testai pritaikyti EN+JA-only switcheriams (root manual links ir privacy lang-link lūkesčiai).
+- Bendruomenės CTA: **WhatsApp** nuoroda pakeista į **Telegram** kanalą `https://t.me/prompt_anatomy` visose bibliotekos `index.html` versijose (`en` / `et` / `lv` / `lt` / `ja`) ir atitinkamai atnaujinti matomi tekstai bei `aria-label`.
+- JA: `ja/index.html` viešas UI (hero, „prieš naudojant“, info dėžutės, next-steps, community, footer, `aria-label`) suvienodintas japonų kalba (kad `/ja/` nebekeltų „pusiau EN“ įspūdžio).
+- JA privatumas: `ja/privacy.html` – išorinių paslaugų paminėjimas atnaujintas nuo WhatsApp į Telegram (kartu su bendru CTA pakeitimu).
+- Dokumentacija: `STYLEGUIDE.md` ir `docs/MICROCOPY_AUDIT_EN.md` – bendruomenės CTA aprašymai suderinti su Telegram.
 
 ---
 
