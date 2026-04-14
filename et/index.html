@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="et" data-hreflang-suite="library">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laske tehisintellektil teha 30–50% teie igapäevastest ülesannetest – Prompti anatoomia</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate" hreflang="lt" href="#" id="hreflang-lt">
+    <link rel="alternate" hreflang="en" href="#" id="hreflang-en">
+    <link rel="alternate" hreflang="et" href="#" id="hreflang-et">
+    <link rel="alternate" hreflang="lv" href="#" id="hreflang-lv">
+    <link rel="alternate" hreflang="ja" href="#" id="hreflang-ja">
+    <link rel="alternate" hreflang="x-default" href="#" id="hreflang-default">
+    <script src="../js/hreflang.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <style>:root { --codeblock-copy-hint: 'Valige ja kopeerige'; }</style>
+    <link rel="stylesheet" href="../css/library.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Otse sisuni</a>
+    <div class="container">
+        <main id="main-content">
+
+        <!-- HERO -->
+        <header class="header">
+            <div class="header-badges">
+                <a href="https://www.promptanatomy.app/en" class="badge" target="_blank" rel="noopener noreferrer" aria-label="Täielik Prompt Anatomy – interaktiivne kursus (avaneb uuel kaardil)">Prompt Anatomy</a>
+                <span class="badge badge-spinoff" role="status" aria-label="Prompt Anatomy spin-off projekt">Spin-off nr 1</span>
+                <nav class="lang-switcher" aria-label="Keel">
+                    <ul class="lang-switcher-list">
+                        <li><a href="../en/" class="lang-link" data-lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li>
+                        <li><span class="lang-current" aria-current="page">Eesti</span></li>
+                        <li><a href="../ja/" class="lang-link" data-lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <h1>Laske tehisintellektil teha 30–50% teie igapäevastest ülesannetest</h1>
+            <p>8 harjutust valmis mallidega – tulemused minutitega.</p>
+            <p class="header-meta" role="status" aria-label="Kellele">Kellele: juhtidele, spetsialistidele, konsultantidele, vabakutselistele.</p>
+            <div class="header-cta">
+                <a href="#block1" class="cta-button" aria-label="Alustage tasuta – minge esimese prompti juurde">Alustage tasuta</a>
+                <a href="#community" class="cta-button-outline" aria-label="Liituge kogukonnaga – WhatsApp grupp">Liituge kogukonnaga</a>
+            </div>
+        </header>
+
+        <!-- KĄ REALIAI GAUSI -->
+        <section class="objectives" aria-labelledby="objectives-title">
+            <h2 id="objectives-title"><i data-lucide="target" aria-hidden="true"></i> Mida saate</h2>
+            <p class="objectives-intro">30 minutiga omandate põhjaliku tehisintellekti töövoo:</p>
+            <ul>
+                <li><i data-lucide="check" aria-hidden="true"></i> 3–5 tundi nädalas säästetud aega</li>
+                <li><i data-lucide="check" aria-hidden="true"></i> Kuni 6× väiksem veaoht</li>
+                <li><i data-lucide="check" aria-hidden="true"></i> 8 standardiseeritud malli</li>
+                <li><i data-lucide="check" aria-hidden="true"></i> Selge automatiseerimise loogika kaootiliste promptide asemel</li>
+            </ul>
+        </section>
+
+        <!-- INSTRUCTIONS (M4: laiko signalas) -->
+        <section class="instructions" aria-labelledby="instructions-title">
+            <h2 class="instructions-title" id="instructions-title">
+                <i data-lucide="book-open" aria-hidden="true"></i>
+                <span>Kuidas seda kogu kasutada</span>
+                <span class="prompt-time" role="status" aria-label="Orienteeruv aeg: 3–5 min sammu kohta">~3–5 min sammu kohta</span>
+            </h2>
+            <ol>
+                <li>Valige prompt ja klõpsake sellel – tekst märgistatakse</li>
+                <li>Klõpsake <strong>„Kopeerige prompt“</strong> või kasutage <code>Ctrl+C</code> / <code>Cmd+C</code></li>
+                <li>Kleepige ChatGPT-sse, Claudesse või teise tehisintellekti tööriista</li>
+                <li>Kui promptis on <code>[ETTEVÕTE]</code> – asendage oma või kliendi ettevõtte nimega; kui <code>[MINU ROLL]</code> – asendage oma ametinimetusega. Tehisintellekti roll (nt „kriitiline analüütik“) on juba promptis – seda muutma ei pea.</li>
+            </ol>
+        </section>
+
+        <!-- PROGRESS INDICATOR (S1) -->
+        <div class="progress-wrap" id="progressIndicator" aria-live="polite" aria-atomic="true">
+            <p id="progressText">Olete kasutanud 0/8 prompti</p>
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="8" aria-label="Edenemine">
+                <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- PROMPT 1 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">1</div>
+                    <div class="category">Alused</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Tehisintellekti konteksti kontroll</h2>
+                <p class="prompt-desc">Kontrollige, mida ChatGPT teie organisatsiooni kohta teab ja kus võib eksida</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block" 
+                     id="block1" 
+                     role="button"
+                     tabindex="0"
+                     aria-label="Valige ja kopeerige prompt 1"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt1">META: Sa oled kriitiline ärianalüütik. Eesmärk: välja selgitada, mida tehisintellekt tegelikult organisatsiooni kohta teab ja kus vajab täpsustusi.
+
+INPUT: Ettevõte [ETTEVÕTE]. Ainult avaliku teabe ja üldiste turuteadmiste põhjal kirjelda, kuidas SINA seda ettevõtet mõistad. Struktuur: 1) Mida tead kindlalt 2) Milliseid eeldusi teed 3) Kus informatsioon puudub ja võid eksida. Lõpus märgi selgelt: "Need punktid vajavad kasutajalt täpsustamist."
+
+OUTPUT: Tulemus: lühike struktureeritud vastus – näete selgelt, kus tehisintellekt võib eksida ja mida enne jätkamist täpsustada.</pre>
+                </div>
+                <section class="before-use" id="before-use-1" aria-labelledby="before-use-title-1">
+                    <h3 class="before-use-title" id="before-use-title-1">Enne kasutamist</h3>
+                    <p><strong>Kasutage, kui:</strong> alustate organisatsiooni analüüsi; soovite kontrollida, mida tehisintellekt ettevõtte kohta teab; valmistute tehisintellekti kontekstis kasutamiseks.</p>
+                    <p><strong>Enne kasutamist asendage:</strong></p>
+                    <ul>
+                        <li>[ETTEVÕTE] → teie või kliendi ettevõte (nt Acme Inc).</li>
+                    </ul>
+                    <p><strong>Mida teha:</strong> See ei ole küsimustik. Kopeerige allolev tekst ja kleepige ChatGPT-sse või Claudesse.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Teave selle prompti kohta">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Miks see loeb</strong>
+                        <p>Vähendab tehisintellekti „hallutsinatsioone“ ja valesid otsuseid – näete selgelt, mida tehisintellekt teie konteksti kohta tegelikult teab.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt1')"
+                        aria-label="Kopeerige prompt 1 lõikelauale"
+                        data-prompt-id="prompt1">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopeerige prompt</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="1" aria-label="Märkige see samm tehtuks">
+                    <span>Märkige tehtuks</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 2 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">2</div>
+                    <div class="category">Analüüs</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Organisatsiooni portree</h2>
+                <p class="prompt-desc">Ehitage selge profiil ja kontekst teie organisatsioonist</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block2"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Valige ja kopeerige prompt 2"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt2">META: Sa oled kogenud ärianalüütik. Eesmärk: luua selge organisatsiooni profiil ja kontekst.
+
+INPUT: Ettevõte [ETTEVÕTE]. Analüüsi ja kirjelda: umbkaudne suurus (töötajad, käive); peamised tegevusvaldkonnad; juhtimine/organisatsioonimudel; tüüpilised väljakutsed selles sektoris. Hoia vastus lühike ja struktureeritud. Märgi, kus teed eeldusi.
+
+OUTPUT: Tulemus: organisatsiooni portree, mida saab kasutada teiste promptide kontekstina.</pre>
+                </div>
+                <section class="before-use" id="before-use-2" aria-labelledby="before-use-title-2">
+                    <h3 class="before-use-title" id="before-use-title-2">Enne kasutamist</h3>
+                    <p><strong>Kasutage, kui:</strong> soovite selget organisatsiooni profiili; valmistute teiste promptide konteksti jaoks; analüüsite klienti või partnerit.</p>
+                    <p><strong>Enne kasutamist asendage:</strong></p>
+                    <ul>
+                        <li>[ETTEVÕTE] → teie või kliendi ettevõte (nt Acme Inc).</li>
+                    </ul>
+                    <p><strong>Mida teha:</strong> Kopeerige allolev tekst ja kleepige ChatGPT-sse või Claudesse.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Teave selle prompti kohta">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Rakendus</strong>
+                        <p>See prompt loob organisatsiooni konteksti, mida kasutatakse kõigis teistes promptides.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt2')"
+                        aria-label="Kopeerige prompt 2 lõikelauale"
+                        data-prompt-id="prompt2">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopeerige prompt</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="2" aria-label="Märkige see samm tehtuks">
+                    <span>Märkige tehtuks</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 3 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">3</div>
+                    <div class="category">Roll</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Minu roll organisatsioonis</h2>
+                <p class="prompt-desc">Määratlege selgelt teie rolli eesmärk, vastutus ja mõju</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block3"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Valige ja kopeerige prompt 3"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt3">META: Sa oled organisatsioonidisaini konsultant. Eesmärk: kirjeldada kasutaja rolli organisatsioonis – eesmärk, vastutus ja mõju.
+
+INPUT: Roll [MINU ROLL], ettevõte [ETTEVÕTE]. Organisatsiooni analüüsi põhjal kirjelda seda rolli. Kaasa: rolli peamine eesmärk; 5–7 põhikohustust; otsustamise tase (operatiivne / taktikaline / strateegiline); kellele antakse aru ja kellega töötatakse igapäevaselt. Kirjuta lühidalt, ilma teooriata.
+
+OUTPUT: Tulemus: selge rollikirjeldus – kasuta järgmiste sammude jaoks.</pre>
+                </div>
+                <section class="before-use" id="before-use-3" aria-labelledby="before-use-title-3">
+                    <h3 class="before-use-title" id="before-use-title-3">Enne kasutamist</h3>
+                    <p><strong>Kasutage, kui:</strong> soovite oma rolli selgitada; alustate uue ettevõttega; vajate oma ameti jaoks viiteteksti.</p>
+                    <p><strong>Enne kasutamist asendage:</strong></p>
+                    <ul>
+                        <li>[ETTEVÕTE] → teie või kliendi ettevõte (nt Acme Inc);</li>
+                        <li>[MINU ROLL] → teie ametinimetus (nt müügijuht).</li>
+                    </ul>
+                    <p><strong>Mida teha:</strong> Kopeerige allolev tekst ja kleepige ChatGPT-sse või Claudesse.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Teave selle prompti kohta">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Tulemus</strong>
+                        <p>Saate selge rollikirjelduse – kasutage seda järgmiste sammude jaoks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt3')"
+                        aria-label="Kopeerige prompt 3 lõikelauale"
+                        data-prompt-id="prompt3">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopeerige prompt</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="3" aria-label="Märkige see samm tehtuks">
+                    <span>Märkige tehtuks</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 4 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">4</div>
+                    <div class="category">Dokument</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Ametijuhend + KPI</h2>
+                <p class="prompt-desc">Looge praktiline ametijuhend koos KPI-dega</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Valige ja kopeerige prompt 4"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt4">META: Sa oled kogenud juht. Eesmärk: luua praktiline ametijuhendi kirjeldus koos KPI-dega.
+
+INPUT: Roll [MINU ROLL], ettevõte [ETTEVÕTE]. Loo ametijuhend. Kaasa: põhikohustused; nõutavad pädevused; 5–7 mõõdetavat KPI-d; milline on "hea tulemus" 6 kuu pärast. Keskendu tegelikule tööle, mitte HR paberimajandusele.
+
+OUTPUT: Tulemus: ametijuhend, mis sobib enesehindluseks või uue töötaja sisseelamiseks.</pre>
+                </div>
+                <section class="before-use" id="before-use-4" aria-labelledby="before-use-title-4">
+                    <h3 class="before-use-title" id="before-use-title-4">Enne kasutamist</h3>
+                    <p><strong>Kasutage, kui:</strong> vajate ametijuhendit; valmistute ülevaatuseks või sisseelamiseks; soovite mõõdetavaid KPI-sid.</p>
+                    <p><strong>Enne kasutamist asendage:</strong></p>
+                    <ul>
+                        <li>[ETTEVÕTE] → teie või kliendi ettevõte (nt Acme Inc);</li>
+                        <li>[MINU ROLL] → teie ametinimetus (nt müügijuht).</li>
+                    </ul>
+                    <p><strong>Mida teha:</strong> Kopeerige allolev tekst ja kleepige ChatGPT-sse või Claudesse.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Teave selle prompti kohta">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Praktiline väärtus</strong>
+                        <p>Seda dokumenti saab kasutada enesehindluseks või uute töötajate sisseelamiseks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt4')"
+                        aria-label="Kopeerige prompt 4 lõikelauale"
+                        data-prompt-id="prompt4">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopeerige prompt</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="4" aria-label="Märkige see samm tehtuks">
+                    <span>Märkige tehtuks</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 5 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">5</div>
+                    <div class="category">Protsessid</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Põhitööprotsessid</h2>
+                <p class="prompt-desc">Tuvastage, kuhu läheb aeg ja energia (Pareto 80/20)</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block5"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Valige ja kopeerige prompt 5"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt5">META: Sa oled äriprotsesside analüütik. Eesmärk: tuvastada 5 kõige olulisemat tööprotsessi (Pareto 80/20) – kuhu aeg ja energia läheb.
+
+INPUT: Roll [MINU ROLL], ettevõte [ETTEVÕTE]. Kirjelda 5 kõige olulisemat protsessi, mida see roll tegelikult teeb. Igaühe jaoks: eesmärk; peamised sammud; osapooled; kus see tavaliselt kinni jookseb. 80% tegevus, 20% selgitus.
+
+OUTPUT: Tulemus: protsesside loend, et näha, kus tehisintellektil on suurim mõju (samm 6).</pre>
+                </div>
+                <section class="before-use" id="before-use-5" aria-labelledby="before-use-title-5">
+                    <h3 class="before-use-title" id="before-use-title-5">Enne kasutamist</h3>
+                    <p><strong>Kasutage, kui:</strong> soovite näha, kuhu aeg läheb; optimeerite tööpäeva; valmistute tehisintellekti lõimimiseks.</p>
+                    <p><strong>Enne kasutamist asendage:</strong></p>
+                    <ul>
+                        <li>[ETTEVÕTE] → teie või kliendi ettevõte (nt Acme Inc);</li>
+                        <li>[MINU ROLL] → teie ametinimetus (nt müügijuht).</li>
+                    </ul>
+                    <p><strong>Mida teha:</strong> Kopeerige allolev tekst ja kleepige ChatGPT-sse või Claudesse.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Teave selle prompti kohta">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Optimeerimine</strong>
+                        <p>Kui protsessid on selged, näete, kus tehisintellektil on suurim mõju.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt5')"
+                        aria-label="Kopeerige prompt 5 lõikelauale"
+                        data-prompt-id="prompt5">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopeerige prompt</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="5" aria-label="Märkige see samm tehtuks">
+                    <span>Märkige tehtuks</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 6 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">6</div>
+                    <div class="category">Tehisintellekt</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Tehisintellekti abi ja optimeerimine</h2>
+                <p class="prompt-desc">Muutke tehisintellekt tõeliseks tööabiliseks – konkreetsed ideed teie protsesside põhjal</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block6"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Valige ja kopeerige prompt 6"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt6">META: Sa oled tehisintellekti rakendamise konsultant. Eesmärk: hinnata protsesse ja pakkuda konkreetseid viise nende parandamiseks ChatGPT või muude tehisintellekti tööriistadega.
+
+INPUT: Hinda (juba kirjeldatud) protsesse ja anna 8–10 ideed. Igaühe jaoks: mida tehisintellekt teeb; millist protsessi osa see kergendab; tegelik kasu (aeg / kvaliteet / maksumus); rakendamise raskus (lihtne / keskmine / raske). Kirjuta mittetehnilisele kasutajale.
+
+OUTPUT: Tulemus: 8–10 konkreetset ideed, kus tehisintellekt võib nädalas tunde säästa.</pre>
+                </div>
+                <section class="before-use" id="before-use-6" aria-labelledby="before-use-title-6">
+                    <h3 class="before-use-title" id="before-use-title-6">Enne kasutamist</h3>
+                    <p><strong>Kasutage, kui:</strong> teil on juba protsessikirjeldused (samm 5); soovite konkreetseid viise tehisintellekti kasutamiseks; soovite aega säästa.</p>
+                    <p><strong>Mida teha:</strong> Kopeerige allolev tekst ja kleepige ChatGPT-sse või Claudesse.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Teave selle prompti kohta">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Tegelik mõju</strong>
+                        <p>See prompt aitab leida konkreetseid kohti, kus tehisintellekt võib nädalas tunde säästa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt6')"
+                        aria-label="Kopeerige prompt 6 lõikelauale"
+                        data-prompt-id="prompt6">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopeerige prompt</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="6" aria-label="Märkige see samm tehtuks">
+                    <span>Märkige tehtuks</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 7 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">7</div>
+                    <div class="category">Kogu</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Igapäevane promptide kogu</h2>
+                <p class="prompt-desc">Valmis promptid igapäevatööks ja väljakutseteks</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block7"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Valige ja kopeerige prompt 7"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt7">META: Sa oled promptide koostaja. Eesmärk: luua 10–12 lühikest igapäevaseks kasutamiseks mõeldud prompti selle rolli ja ettevõtte jaoks.
+
+INPUT: Roll [MINU ROLL], ettevõte [ETTEVÕTE]. Loo promptid, mis aitavad: planeerimisel; probleemide lahendamisel; suhtluses; otsustamisel. Anna tabel: [KÜSITIS] | [MILLAL KASUTAN] | [MILLISE PROBLEEMI LAHENDAB].
+
+OUTPUT: Tulemus: isiklik promptide kogu – tabel, mida saate iga päev kasutada.</pre>
+                </div>
+                <section class="before-use" id="before-use-7" aria-labelledby="before-use-title-7">
+                    <h3 class="before-use-title" id="before-use-title-7">Enne kasutamist</h3>
+                    <p><strong>Kasutage, kui:</strong> soovite isiklikke prompte; igapäevatööks ja kiirete otsuste jaoks; soovite tabelit veergudega <code>[KÜSITIS]</code> | <code>[MILLAL KASUTAN]</code> | <code>[MILLISE PROBLEEMI LAHENDAB]</code>.</p>
+                    <p><strong>Enne kasutamist asendage:</strong></p>
+                    <ul>
+                        <li>[ETTEVÕTE] → teie või kliendi ettevõte (nt Acme Inc);</li>
+                        <li>[MINU ROLL] → teie ametinimetus (nt müügijuht).</li>
+                    </ul>
+                    <p><strong>Mida teha:</strong> Kopeerige allolev tekst ja kleepige ChatGPT-sse või Claudesse.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Teave selle prompti kohta">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Igapäevane areng</strong>
+                        <p>Saate isikliku promptide kogu – kasutage iga päev ilma lisamõtlemiseta.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt7')"
+                        aria-label="Kopeerige prompt 7 lõikelauale"
+                        data-prompt-id="prompt7">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopeerige prompt</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="7" aria-label="Märkige see samm tehtuks">
+                    <span>Märkige tehtuks</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 8 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">8</div>
+                    <div class="category">Simulatsioon</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Kriitilise olukorra simulatsioon</h2>
+                <p class="prompt-desc">Valmistuge surveks ja ebakindluseks ette</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block8"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Valige ja kopeerige prompt 8"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt8">META: Sa oled strateegilise planeerimise konsultant. Eesmärk: simuleerida kriitilisi olukordi ja tegevusplaani – valmistuda surveks ja ebakindluseks.
+
+INPUT: Ettevõte [ETTEVÕTE], roll [MINU ROLL]. Kujuta ette kriitilist olukorda, mis mõjutab otse seda rolli. Anna: 2 realistlikku stsenaariumit; tegevusplaan esimeseks 14 päevaks; kuidas tehisintellekt saab aidata; peamised riskid ja edu kriteeriumid.
+
+OUTPUT: Tulemus: stsenaariumid ja 14-päevane plaan – parem harjutada tehisintellektiga ette kui päris olukorras.</pre>
+                </div>
+                <section class="before-use" id="before-use-8" aria-labelledby="before-use-title-8">
+                    <h3 class="before-use-title" id="before-use-title-8">Enne kasutamist</h3>
+                    <p><strong>Kasutage, kui:</strong> soovite valmistuda kriisideks; planeerida reaktsiooni survele; treenida otsuseid tehisintellektiga.</p>
+                    <p><strong>Enne kasutamist asendage:</strong></p>
+                    <ul>
+                        <li>[ETTEVÕTE] → teie või kliendi ettevõte (nt Acme Inc);</li>
+                        <li>[MINU ROLL] → teie ametinimetus (nt müügijuht).</li>
+                    </ul>
+                    <p><strong>Mida teha:</strong> Kopeerige allolev tekst ja kleepige ChatGPT-sse või Claudesse.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Teave selle prompti kohta">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Valmidus</strong>
+                        <p>Simulatsioonid aitavad õppida kriise juhtima enne, kui need juhtuvad. Parem harjutada tehisintellektiga kui päris olukorras.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt8')"
+                        aria-label="Kopeerige prompt 8 lõikelauale"
+                        data-prompt-id="prompt8">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopeerige prompt</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="8" aria-label="Märkige see samm tehtuks">
+                    <span>Märkige tehtuks</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- KAS TOLIAU? (S2) -->
+        <section class="next-steps" aria-labelledby="next-steps-title">
+            <h2 id="next-steps-title">Mis edasi?</h2>
+            <p>Parim on minna järjekorras 1–8. Klõpsake lingil, et hüpata selle prompti juurde.</p>
+            <div class="next-steps-links">
+                <a href="#block1">1. Konteksti kontroll</a>
+                <a href="#block2">2. Organisatsiooni portree</a>
+                <a href="#block3">3. Minu roll</a>
+                <a href="#block4">4. Ametijuhend + KPI</a>
+                <a href="#block5">5. Tööprotsessid</a>
+                <a href="#block6">6. Tehisintellekti optimeerimine</a>
+                <a href="#block7">7. Igapäevane kogu</a>
+                <a href="#block8">8. Kriitilise olukorra simulatsioon</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <!-- BENDRUOMENĖ -->
+        <section class="community" id="community" aria-labelledby="community-title">
+            <h2 id="community-title">Soovite rohkem?<br>Liituge WhatsAppi grupiga.</h2>
+            <p>Ühised arutelud, nõuanded ja uudised promptide ja tehisintellekti kohta.</p>
+            <a href="https://chat.whatsapp.com/It49fzTl1n90huRCoWWkwu?mode=gi_t" class="community-cta-primary" target="_blank" rel="noopener noreferrer" aria-label="Ava Prompt Anatomy WhatsApp grupp uuel kaardil">Liitu WhatsAppi grupiga</a>
+            <a href="https://www.promptanatomy.app/en" class="community-cta-secondary" target="_blank" rel="noopener noreferrer" aria-label="Täielik Prompt Anatomy – interaktiivne kursus (avaneb uuel kaardil)">Prompt Anatomy →</a>
+        </section>
+
+        <footer class="footer">
+            <h3>Edu promptidega <i data-lucide="rocket" aria-hidden="true"></i></h3>
+            <p>Kui promptis on [ETTEVÕTE] või [MINU ROLL] – asendage oma andmetega. Tehisintellekti roll (nt „kriitiline analüütik“) on juba seatud – seda muutma ei pea.</p>
+            <p class="footer-product-link">See on <strong>Spin-off nr 1</strong> projektist „Prompt Anatomy“. Täielik interaktiivne kursus ja rohkem: <a href="https://www.promptanatomy.app/en" target="_blank" rel="noopener noreferrer">Prompt Anatomy →</a></p>
+            <div class="tags" role="list">
+                <span class="tag" role="listitem"><i data-lucide="bot" aria-hidden="true"></i> Tehisintellektile optimeeritud</span>
+                <span class="tag" role="listitem"><i data-lucide="book-marked" aria-hidden="true"></i> 8 prompti</span>
+                <span class="tag" role="listitem"><i data-lucide="zap" aria-hidden="true"></i> Kiire start</span>
+                <span class="tag" role="listitem"><i data-lucide="target" aria-hidden="true"></i> Tulemused</span>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Tomas Staniulis. Õppematerjal. Kõik õigused kaitstud. <a href="privacy.html">Privaatsus</a></p>
+            </div>
+        </footer>
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <textarea class="hidden" id="hiddenTextarea" aria-label="Kopeerimisväli" aria-hidden="true"></textarea>
+    
+    <div class="toast" 
+         id="toast" 
+         role="status" 
+         aria-live="polite" 
+         aria-atomic="true"
+         aria-label="Kopeerimisteade">
+        <div class="toast-icon" aria-hidden="true"><i data-lucide="check"></i></div>
+        <span>Kopeeritud</span>
+    </div>
+
+    <script src="../js/library.et.js" defer></script>
+</body>
+</html>

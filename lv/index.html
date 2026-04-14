@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="lv" data-hreflang-suite="library">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ļaujiet MI veikt 30–50% no jūsu ikdienas uzdevumiem – Prompt Anatomy</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="alternate" hreflang="lt" href="#" id="hreflang-lt">
+    <link rel="alternate" hreflang="en" href="#" id="hreflang-en">
+    <link rel="alternate" hreflang="et" href="#" id="hreflang-et">
+    <link rel="alternate" hreflang="lv" href="#" id="hreflang-lv">
+    <link rel="alternate" hreflang="ja" href="#" id="hreflang-ja">
+    <link rel="alternate" hreflang="x-default" href="#" id="hreflang-default">
+    <script src="../js/hreflang.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <style>:root { --codeblock-copy-hint: 'Atlasiet un kopējiet'; }</style>
+    <link rel="stylesheet" href="../css/library.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Tieši uz saturu</a>
+    <div class="container">
+        <main id="main-content">
+
+        <!-- HERO -->
+        <header class="header">
+            <div class="header-badges">
+                <a href="https://www.promptanatomy.app/en" class="badge" target="_blank" rel="noopener noreferrer" aria-label="Pilnā Prompt Anatomy – interaktīvs kurss (atveras jaunā cilnē)">Prompt Anatomy</a>
+                <span class="badge badge-spinoff" role="status" aria-label="Prompt Anatomy spin-off projekts">Spin-off Nr. 1</span>
+                <nav class="lang-switcher" aria-label="Valoda">
+                    <ul class="lang-switcher-list">
+                        <li><a href="../en/" class="lang-link" data-lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a></li>
+                        <li><span class="lang-current" aria-current="page">Latviešu</span></li>
+                        <li><a href="../ja/" class="lang-link" data-lang="ja" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <h1>Ļaujiet MI veikt 30–50% no jūsu ikdienas uzdevumiem</h1>
+            <p>8 vingrinājumi ar gataviem veidnēm – rezultāti dažu minūšu laikā.</p>
+            <p class="header-meta" role="status" aria-label="Kam">Kam: vadītājiem, speciālistiem, konsultantiem, brīvmāksliniekiem.</p>
+            <div class="header-cta">
+                <a href="#block1" class="cta-button" aria-label="Sākt bez maksas – pāriet pie pirmā prompta">Sākt bez maksas</a>
+                <a href="#community" class="cta-button-outline" aria-label="Pievienoties kopienai – WhatsApp grupa">Pievienoties kopienai</a>
+            </div>
+        </header>
+
+        <!-- KĄ REALIAI GAUSI -->
+        <section class="objectives" aria-labelledby="objectives-title">
+            <h2 id="objectives-title"><i data-lucide="target" aria-hidden="true"></i> Ko iegūstat</h2>
+            <p class="objectives-intro">30 minūtēs iegūsiet pamata MI darba plūsmu:</p>
+            <ul>
+                <li><i data-lucide="check" aria-hidden="true"></i> 3–5 stundas ietaupītas nedēļā</li>
+                <li><i data-lucide="check" aria-hidden="true"></i> Līdz 6× mazāks kļūdu risks</li>
+                <li><i data-lucide="check" aria-hidden="true"></i> 8 standartizētas veidnes</li>
+                <li><i data-lucide="check" aria-hidden="true"></i> Skaidra automatizācijas loģika nevis haotiski prompti</li>
+            </ul>
+        </section>
+
+        <!-- INSTRUCTIONS (M4: laiko signalas) -->
+        <section class="instructions" aria-labelledby="instructions-title">
+            <h2 class="instructions-title" id="instructions-title">
+                <i data-lucide="book-open" aria-hidden="true"></i>
+                <span>Kā lietot šo bibliotēku</span>
+                <span class="prompt-time" role="status" aria-label="Orientējošais laiks: 3–5 min uz soli">~3–5 min uz soli</span>
+            </h2>
+            <ol>
+                <li>Izvēlieties promptu un noklikšķiniet – teksts tiks atlasīts</li>
+                <li>Nospiediet <strong>„Kopēt promptu“</strong> vai izmantojiet <code>Ctrl+C</code> / <code>Cmd+C</code></li>
+                <li>Ielīmējiet ChatGPT, Claude vai citā MI rīkā</li>
+                <li>Ja promptā ir <code>[UZŅĒMUMS]</code> – aizstājiet ar savu vai klienta uzņēmuma nosaukumu; ja <code>[MANA LOMA]</code> – ar savu amatu. MI loma (piem. „kritisks analītiķis“) jau ir promptā – mainīt nav jā.</li>
+            </ol>
+        </section>
+
+        <!-- PROGRESS INDICATOR (S1) -->
+        <div class="progress-wrap" id="progressIndicator" aria-live="polite" aria-atomic="true">
+            <p id="progressText">Lietojāt 0 no 8 promptiem</p>
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="8" aria-label="Progress">
+                <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- PROMPT 1 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">1</div>
+                    <div class="category">Pamati</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">MI konteksta pārbaude</h2>
+                <p class="prompt-desc">Pārbaudiet, ko ChatGPT zina par jūsu organizāciju un kur var kļūdīties</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block" 
+                     id="block1" 
+                     role="button"
+                     tabindex="0"
+                     aria-label="Atlasīt un kopēt promptu 1"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt1">META: Tu esi kritisks biznesa analītiķis. Mērķis: noskaidrot, ko mākslīgais intelekts patiesi zina par organizāciju un kur nepieciešama precizēšana.
+
+INPUT: Uzņēmums [UZŅĒMUMS]. Tikai pamatojoties uz publiski pieejamu informāciju un vispārējām tirgus zināšanām, apraksti, kā TU saproti šo uzņēmumu. Struktūra: 1) Ko zini ar pārliecību 2) Kādas pieņēmumus izdari 3) Kur trūkst informācijas un vari kļūdīties. Beigās skaidri atzīmē: "Šīs vietas prasa precizējumu no lietotāja."
+
+OUTPUT: Rezultāts: īss strukturēts atbildes fragments – skaidri redzams, kur MI var kļūdīties un ko precizēt pirms turpināt.</pre>
+                </div>
+                <section class="before-use" id="before-use-1" aria-labelledby="before-use-title-1">
+                    <h3 class="before-use-title" id="before-use-title-1">Pirms lietošanas</h3>
+                    <p><strong>Lietojiet, kad:</strong> sākat analizēt organizāciju; vēlaties pārbaudīt, ko MI zina par uzņēmumu; gatavojaties lietot MI ar kontekstu.</p>
+                    <p><strong>Pirms lietošanas aizstājiet:</strong></p>
+                    <ul>
+                        <li>[UZŅĒMUMS] → jūsu vai klienta uzņēmums (piem. Acme Inc).</li>
+                    </ul>
+                    <p><strong>Ko darīt:</strong> Tas nav jautājumu saraksts. Kopējiet zemāk esošo tekstu un ielīmējiet ChatGPT vai Claude.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Informācija par šo promptu">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Kāpēc tas svarīgi</strong>
+                        <p>Samazina MI „halucinācijas“ un nepareizus lēmumus – skaidri redzat, ko MI patiesi zina par jūsu kontekstu.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt1')"
+                        aria-label="Kopēt promptu 1 starpliktuvē"
+                        data-prompt-id="prompt1">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopēt promptu</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="1" aria-label="Atzīmēt šo soli kā izdarītu">
+                    <span>Atzīmēt kā izdarītu</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 2 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">2</div>
+                    <div class="category">Analīze</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Organizācijas portrets</h2>
+                <p class="prompt-desc">Izveidojiet skaidru profilu un kontekstu par savu organizāciju</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block2"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Atlasīt un kopēt promptu 2"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt2">META: Tu esi pieredzējis biznesa analītiķis. Mērķis: izveidot skaidru organizācijas profilu un kontekstu.
+
+INPUT: Uzņēmums [UZŅĒMUMS]. Analizē un apraksti: aptuvenais izmērs (darbinieki, apgrozījums); galvenās darbības jomas; vadības/organizācijas modelis; tipiski izaicinājumi šajā nozarē. Atbildi īsi un strukturēti. Atzīmē, kur izdari pieņēmumus.
+
+OUTPUT: Rezultāts: organizācijas portrets, ko izmantot kā kontekstu citiem promptiem.</pre>
+                </div>
+                <section class="before-use" id="before-use-2" aria-labelledby="before-use-title-2">
+                    <h3 class="before-use-title" id="before-use-title-2">Pirms lietošanas</h3>
+                    <p><strong>Lietojiet, kad:</strong> vēlaties skaidru organizācijas profilu; gatavojat kontekstu citiem promptiem; analizējat klientu vai partneri.</p>
+                    <p><strong>Pirms lietošanas aizstājiet:</strong></p>
+                    <ul>
+                        <li>[UZŅĒMUMS] → jūsu vai klienta uzņēmums (piem. Acme Inc).</li>
+                    </ul>
+                    <p><strong>Ko darīt:</strong> Kopējiet zemāk esošo tekstu un ielīmējiet ChatGPT vai Claude.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Informācija par šo promptu">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Pielietojums</strong>
+                        <p>Šis prompts rada organizācijas kontekstu, ko izmantos visos pārējos promptos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt2')"
+                        aria-label="Kopēt promptu 2 starpliktuvē"
+                        data-prompt-id="prompt2">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopēt promptu</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="2" aria-label="Atzīmēt šo soli kā izdarītu">
+                    <span>Atzīmēt kā izdarītu</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 3 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">3</div>
+                    <div class="category">Loma</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Mana loma organizācijā</h2>
+                <p class="prompt-desc">Skaidri definējiet savas lomas mērķi, pienākumus un ietekmi</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block3"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Atlasīt un kopēt promptu 3"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt3">META: Tu esi organizācijas dizaina konsultants. Mērķis: aprakstīt lietotāja lomu organizācijā – mērķi, pienākumus un ietekmi.
+
+INPUT: Loma [MANA LOMA], uzņēmums [UZŅĒMUMS]. Pamatojoties uz organizācijas analīzi, apraksti šo lomu. Iekļauj: galvenais lomas mērķis; 5–7 pamatpienākumi; lēmumu līmenis (operacionāls / taktisks / stratēģisks); kam atskaitās un ar ko ikdienā sadarbojas. Raksti īsi, bez teorijas.
+
+OUTPUT: Rezultāts: skaidrs lomas apraksts – izmanto kā atsauce nākamajiem soļiem.</pre>
+                </div>
+                <section class="before-use" id="before-use-3" aria-labelledby="before-use-title-3">
+                    <h3 class="before-use-title" id="before-use-title-3">Pirms lietošanas</h3>
+                    <p><strong>Lietojiet, kad:</strong> vēlaties noskaidrot savu lomu; sākat jaunā uzņēmumā; vajag atsauci uz savu amatu.</p>
+                    <p><strong>Pirms lietošanas aizstājiet:</strong></p>
+                    <ul>
+                        <li>[UZŅĒMUMS] → jūsu vai klienta uzņēmums (piem. Acme Inc);</li>
+                        <li>[MANA LOMA] → jūsu amata nosaukums (piem. pārdošanas vadītājs).</li>
+                    </ul>
+                    <p><strong>Ko darīt:</strong> Kopējiet zemāk esošo tekstu un ielīmējiet ChatGPT vai Claude.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Informācija par šo promptu">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Rezultāts</strong>
+                        <p>Iegūstat skaidru lomas aprakstu – izmantojiet kā atsauce nākamajiem soļiem.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt3')"
+                        aria-label="Kopēt promptu 3 starpliktuvē"
+                        data-prompt-id="prompt3">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopēt promptu</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="3" aria-label="Atzīmēt šo soli kā izdarītu">
+                    <span>Atzīmēt kā izdarītu</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 4 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">4</div>
+                    <div class="category">Dokuments</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Amata apraksts + KPI</h2>
+                <p class="prompt-desc">Izveidojiet praktisku amata aprakstu ar KPI</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Atlasīt un kopēt promptu 4"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt4">META: Tu esi pieredzējis vadītājs. Mērķis: izveidot praktisku amata aprakstu ar KPI.
+
+INPUT: Loma [MANA LOMA], uzņēmums [UZŅĒMUMS]. Izveido amata aprakstu. Iekļauj: pamatpienākumus; nepieciešamās kompetences; 5–7 mērāmus KPI; kā izskatās "labs sniegums" pēc 6 mēnešiem. Fokuss uz reālo darbu, ne HR birokrātiju.
+
+OUTPUT: Rezultāts: amata apraksts pašnovērtējai vai jauna darbinieka vervēšanai.</pre>
+                </div>
+                <section class="before-use" id="before-use-4" aria-labelledby="before-use-title-4">
+                    <h3 class="before-use-title" id="before-use-title-4">Pirms lietošanas</h3>
+                    <p><strong>Lietojiet, kad:</strong> vajag amata aprakstu; gatavojaties pārbaudei vai vervēšanai; vēlaties mērāmus KPI.</p>
+                    <p><strong>Pirms lietošanas aizstājiet:</strong></p>
+                    <ul>
+                        <li>[UZŅĒMUMS] → jūsu vai klienta uzņēmums (piem. Acme Inc);</li>
+                        <li>[MANA LOMA] → jūsu amata nosaukums (piem. pārdošanas vadītājs).</li>
+                    </ul>
+                    <p><strong>Ko darīt:</strong> Kopējiet zemāk esošo tekstu un ielīmējiet ChatGPT vai Claude.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Informācija par šo promptu">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Praktiskā vērtība</strong>
+                        <p>Šo dokumentu var izmantot pašnovērtējai vai jaunu darbinieku vervēšanai.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt4')"
+                        aria-label="Kopēt promptu 4 starpliktuvē"
+                        data-prompt-id="prompt4">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopēt promptu</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="4" aria-label="Atzīmēt šo soli kā izdarītu">
+                    <span>Atzīmēt kā izdarītu</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 5 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">5</div>
+                    <div class="category">Procesi</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Galvenie darba procesi</h2>
+                <p class="prompt-desc">Identificējiet, kur tiek tērēts laiks un enerģija (Pareto 80/20)</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block5"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Atlasīt un kopēt promptu 5"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt5">META: Tu esi biznesa procesu analītiķis. Mērķis: identificēt 5 svarīgākos darba procesus (Pareto 80/20) – kur tiek tērēts laiks un enerģija.
+
+INPUT: Loma [MANA LOMA], uzņēmums [UZŅĒMUMS]. Apraksti 5 svarīgākos procesus, ko šī loma patiesi veic. Katram: mērķis; galvenie soļi; iesaistītās lomas; kur tas parasti "iesprūst". 80% darbības, 20% skaidrojums.
+
+OUTPUT: Rezultāts: procesu saraksts, lai redzētu, kur MI būs lielākā ietekme (6. solis).</pre>
+                </div>
+                <section class="before-use" id="before-use-5" aria-labelledby="before-use-title-5">
+                    <h3 class="before-use-title" id="before-use-title-5">Pirms lietošanas</h3>
+                    <p><strong>Lietojiet, kad:</strong> vēlaties redzēt, kur tiek laiks; optimizējat darba dienu; gatavojaties MI integrācijai.</p>
+                    <p><strong>Pirms lietošanas aizstājiet:</strong></p>
+                    <ul>
+                        <li>[UZŅĒMUMS] → jūsu vai klienta uzņēmums (piem. Acme Inc);</li>
+                        <li>[MANA LOMA] → jūsu amata nosaukums (piem. pārdošanas vadītājs).</li>
+                    </ul>
+                    <p><strong>Ko darīt:</strong> Kopējiet zemāk esošo tekstu un ielīmējiet ChatGPT vai Claude.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Informācija par šo promptu">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Optimizācija</strong>
+                        <p>Saprotot procesus, redzat, kur MI būs lielākā ietekme.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt5')"
+                        aria-label="Kopēt promptu 5 starpliktuvē"
+                        data-prompt-id="prompt5">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopēt promptu</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="5" aria-label="Atzīmēt šo soli kā izdarītu">
+                    <span>Atzīmēt kā izdarītu</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 6 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">6</div>
+                    <div class="category">MI integrācija</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">MI palīdzība un optimizācija</h2>
+                <p class="prompt-desc">Pārvērsiet MI par īstu darba asistentu – konkrētas idejas balstītas uz jūsu procesiem</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block6"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Atlasīt un kopēt promptu 6"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt6">META: Tu esi MI ieviešanas konsultants. Mērķis: novērtēt procesus un ieteikt konkrētus veidus, kā tos uzlabot, izmantojot ChatGPT vai citus MI rīkus.
+
+INPUT: Novērtē (jau aprakstītos) procesus un dod 8–10 idejas. Katrai: ko dara MI; kuru procesa daļu atvieglo; reāls ieguvums (laiks / kvalitāte / izmaksas); ieviešanas grūtības (viegli / vidēji / grūti). Raksti saprotami lietotājam bez tehniskām zināšanām.
+
+OUTPUT: Rezultāts: 8–10 konkrētas idejas, kur MI var ietaupīt stundas nedēļā.</pre>
+                </div>
+                <section class="before-use" id="before-use-6" aria-labelledby="before-use-title-6">
+                    <h3 class="before-use-title" id="before-use-title-6">Pirms lietošanas</h3>
+                    <p><strong>Lietojiet, kad:</strong> jau ir procesu apraksti (5. solis); vēlaties konkrētus veidus MI lietošanai; vēlaties ietaupīt laiku.</p>
+                    <p><strong>Ko darīt:</strong> Kopējiet zemāk esošo tekstu un ielīmējiet ChatGPT vai Claude.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Informācija par šo promptu">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Reālā ietekme</strong>
+                        <p>Šis prompts palīdz atrast konkrētas vietas, kur MI var ietaupīt stundas nedēļā.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt6')"
+                        aria-label="Kopēt promptu 6 starpliktuvē"
+                        data-prompt-id="prompt6">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopēt promptu</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="6" aria-label="Atzīmēt šo soli kā izdarītu">
+                    <span>Atzīmēt kā izdarītu</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 7 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">7</div>
+                    <div class="category">Bibliotēka</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Ikdienas promptu bibliotēka</h2>
+                <p class="prompt-desc">Gatavi prompti ikdienas darbam un izaicinājumiem</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block7"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Atlasīt un kopēt promptu 7"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt7">META: Tu esi promptu inženieris. Mērķis: izveidot 10–12 īsus ikdienas promptus šai konkrētajai lomai un uzņēmumam.
+
+INPUT: Loma [MANA LOMA], uzņēmums [UZŅĒMUMS]. Izveido promptus, kas palīdz: plānošanā; problēmu risināšanā; komunikācijā; lēmumu pieņemšanā. Dod tabulu: [PROMPTTEKSTS] | [KAD LIETOJU] | [KĀDU PROBLĒMU RISINA].
+
+OUTPUT: Rezultāts: personīga promptu kolekcija – tabula ikdienas lietošanai.</pre>
+                </div>
+                <section class="before-use" id="before-use-7" aria-labelledby="before-use-title-7">
+                    <h3 class="before-use-title" id="before-use-title-7">Pirms lietošanas</h3>
+                    <p><strong>Lietojiet, kad:</strong> vēlaties personiskus promptus; ikdienas darbam un ātriem lēmumiem; vēlaties tabulu ar kolonnām <code>[PROMPTTEKSTS]</code> | <code>[KAD LIETOJU]</code> | <code>[KĀDU PROBLĒMU RISINA]</code>.</p>
+                    <p><strong>Pirms lietošanas aizstājiet:</strong></p>
+                    <ul>
+                        <li>[UZŅĒMUMS] → jūsu vai klienta uzņēmums (piem. Acme Inc);</li>
+                        <li>[MANA LOMA] → jūsu amata nosaukums (piem. pārdošanas vadītājs).</li>
+                    </ul>
+                    <p><strong>Ko darīt:</strong> Kopējiet zemāk esošo tekstu un ielīmējiet ChatGPT vai Claude.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Informācija par šo promptu">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Ikdienas uzlabojums</strong>
+                        <p>Iegūstat personisku promptu kolekciju – lietojiet katru dienu bez liekām pārdomām.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt7')"
+                        aria-label="Kopēt promptu 7 starpliktuvē"
+                        data-prompt-id="prompt7">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopēt promptu</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="7" aria-label="Atzīmēt šo soli kā izdarītu">
+                    <span>Atzīmēt kā izdarītu</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- PROMPT 8 -->
+        <article class="prompt">
+            <div class="prompt-header">
+                <div class="prompt-meta">
+                    <div class="number">8</div>
+                    <div class="category">Simulācija</div>
+                    <span class="prompt-time">~3–5 min</span>
+                </div>
+                <h2 class="prompt-title">Kritiskas situācijas simulācija</h2>
+                <p class="prompt-desc">Sagatavojieties spiedienam un nenoteiktībai iepriekš</p>
+            </div>
+            <div class="prompt-body">
+                <div class="code-block"
+                     id="block8"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Atlasīt un kopēt promptu 8"
+                     onclick="selectText(this)"
+                     onkeydown="handleCodeBlockKeydown(event, this)">
+                    <pre class="code-text" id="prompt8">META: Tu esi stratēģiskās plānošanas konsultants. Mērķis: simulēt kritiskas situācijas un rīcības plānu – sagatavoties spiedienam un nenoteiktībai.
+
+INPUT: Uzņēmums [UZŅĒMUMS], loma [MANA LOMA]. Iedomājies kritisku situāciju, kas tieši ietekmē šo lomu. Dod: 2 reālistiskus scenārijus; rīcības plānu pirmajiem 14 dienām; kā MI var palīdzēt; galvenos riskus un veiksmes kritērijus.
+
+OUTPUT: Rezultāts: scenāriji un 14 dienu plāns – labāk trenēties ar MI iepriekš nekā reālā situācijā.</pre>
+                </div>
+                <section class="before-use" id="before-use-8" aria-labelledby="before-use-title-8">
+                    <h3 class="before-use-title" id="before-use-title-8">Pirms lietošanas</h3>
+                    <p><strong>Lietojiet, kad:</strong> vēlaties sagatavoties krīzēm; plānot reakciju uz spiedienu; trenēt lēmumus ar MI.</p>
+                    <p><strong>Pirms lietošanas aizstājiet:</strong></p>
+                    <ul>
+                        <li>[UZŅĒMUMS] → jūsu vai klienta uzņēmums (piem. Acme Inc);</li>
+                        <li>[MANA LOMA] → jūsu amata nosaukums (piem. pārdošanas vadītājs).</li>
+                    </ul>
+                    <p><strong>Ko darīt:</strong> Kopējiet zemāk esošo tekstu un ielīmējiet ChatGPT vai Claude.</p>
+                </section>
+                <div class="info-box" role="note" aria-label="Informācija par šo promptu">
+                    <div class="info-icon" aria-hidden="true"><i data-lucide="lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Gatavība</strong>
+                        <p>Simulācijas palīdz mācīties pārvaldīt krīses pirms tās notiek. Labāk trenēties ar MI nekā reālā situācijā.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-footer">
+                <button class="btn" 
+                        onclick="copyPrompt(this, 'prompt8')"
+                        aria-label="Kopēt promptu 8 starpliktuvē"
+                        data-prompt-id="prompt8">
+                    <i data-lucide="clipboard-copy" aria-hidden="true"></i>
+                    <span>Kopēt promptu</span>
+                </button>
+                <label class="prompt-done-wrap">
+                    <input type="checkbox" class="prompt-done" data-prompt-id="8" aria-label="Atzīmēt šo soli kā izdarītu">
+                    <span>Atzīmēt kā izdarītu</span>
+                </label>
+            </div>
+        </article>
+
+        <!-- KAS TOLIAU? (S2) -->
+        <section class="next-steps" aria-labelledby="next-steps-title">
+            <h2 id="next-steps-title">Kas tālāk?</h2>
+            <p>Vislabāk iet secībā no 1 līdz 8. Noklikšķiniet uz saites, lai pārietu pie attiecīgā prompta.</p>
+            <div class="next-steps-links">
+                <a href="#block1">1. Konteksta pārbaude</a>
+                <a href="#block2">2. Organizācijas portrets</a>
+                <a href="#block3">3. Mana loma</a>
+                <a href="#block4">4. Amata apraksts + KPI</a>
+                <a href="#block5">5. Darba procesi</a>
+                <a href="#block6">6. MI optimizācija</a>
+                <a href="#block7">7. Ikdienas bibliotēka</a>
+                <a href="#block8">8. Kritiskas situācijas simulācija</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <!-- BENDRUOMENĖ -->
+        <section class="community" id="community" aria-labelledby="community-title">
+            <h2 id="community-title">Vēlaties vairāk?<br>Pievienojieties WhatsApp grupai.</h2>
+            <p>Kopīgas diskusijas, padomi un jaunumi par promptiem un MI.</p>
+            <a href="https://chat.whatsapp.com/It49fzTl1n90huRCoWWkwu?mode=gi_t" class="community-cta-primary" target="_blank" rel="noopener noreferrer" aria-label="Atvērt Prompt Anatomy WhatsApp grupu jaunā cilnē">Pievienoties WhatsApp grupai</a>
+            <a href="https://www.promptanatomy.app/en" class="community-cta-secondary" target="_blank" rel="noopener noreferrer" aria-label="Pilnā Prompt Anatomy – interaktīvs kurss (atveras jaunā cilnē)">Prompt Anatomy →</a>
+        </section>
+
+        <footer class="footer">
+            <h3>Veiksmi ar promptiem <i data-lucide="rocket" aria-hidden="true"></i></h3>
+            <p>Ja promptā ir [UZŅĒMUMS] vai [MANA LOMA] – aizstājiet ar saviem datiem. MI loma (piem. „kritisks analītiķis“) jau ir iestatīta – mainīt nav jā.</p>
+            <p class="footer-product-link">Šis ir <strong>Spin-off Nr. 1</strong> no „Prompt Anatomy“. Pilns interaktīvs kurss un vairāk: <a href="https://www.promptanatomy.app/en" target="_blank" rel="noopener noreferrer">Prompt Anatomy →</a></p>
+            <div class="tags" role="list">
+                <span class="tag" role="listitem"><i data-lucide="bot" aria-hidden="true"></i> MI optimizēts</span>
+                <span class="tag" role="listitem"><i data-lucide="book-marked" aria-hidden="true"></i> 8 prompti</span>
+                <span class="tag" role="listitem"><i data-lucide="zap" aria-hidden="true"></i> Ātrs starts</span>
+                <span class="tag" role="listitem"><i data-lucide="target" aria-hidden="true"></i> Rezultāti</span>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Tomas Staniulis. Apmācību materiāls. Visas tiesības aizsargātas. <a href="privacy.html">Privātums</a></p>
+            </div>
+        </footer>
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <textarea class="hidden" id="hiddenTextarea" aria-label="Kopēšanas lauks" aria-hidden="true"></textarea>
+    
+    <div class="toast" 
+         id="toast" 
+         role="status" 
+         aria-live="polite" 
+         aria-atomic="true"
+         aria-label="Kopēšanas paziņojums">
+        <div class="toast-icon" aria-hidden="true"><i data-lucide="check"></i></div>
+        <span>Nokopēts</span>
+    </div>
+
+    <script src="../js/library.lv.js" defer></script>
+</body>
+</html>

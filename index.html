@@ -1,14 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=/en/" />
-    <link rel="canonical" href="/en/" />
-    <title>Redirecting…</title>
-  </head>
-  <body>
-    <p>If you are not redirected, open <a href="/en/">/en/</a>.</p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-path" content="">
+    <title>Redirect – Prompt Anatomy</title>
+    <script>
+        (function() {
+            var base = document.querySelector('meta[name="base-path"]');
+            base = base ? (base.getAttribute('content') || '') : '';
+            if (base && base.slice(-1) === '/') base = base.slice(0, -1);
+            if (base === '' && location.pathname && location.pathname !== '/') {
+                base = location.pathname.replace(/\/index\.html?$/i, '').replace(/\/?$/, '') || '';
+            }
+            var lang = 'ja';
+            try {
+                var stored = localStorage.getItem('lang');
+                if (stored === 'ja' || stored === 'en') lang = stored;
+                else if (stored === 'lt' || stored === 'et' || stored === 'lv') lang = 'en';
+                else if (typeof navigator !== 'undefined' && navigator.language) {
+                    var nav = navigator.language.toLowerCase();
+                    if (nav.indexOf('ja') === 0) lang = 'ja';
+                    else if (nav.indexOf('en') === 0) lang = 'en';
+                }
+            } catch (e) {}
+            var path = (base ? base + '/' : '/') + lang + '/';
+            window.location.replace(path);
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirecting… <a href="en/" onclick="try{localStorage.setItem('lang','en')}catch(e){}">English</a> | <a href="ja/" onclick="try{localStorage.setItem('lang','ja')}catch(e){}">日本語</a></p>
+</body>
 </html>
-
