@@ -87,9 +87,9 @@
 
 | Element | Current copy |
 |---------|--------------|
-| Community H2 | Want more? Join the WhatsApp group. |
+| Community H2 | Want more? Join us on Telegram. |
 | Subline | Shared discussions, tips and news about prompts and AI. |
-| Primary CTA | Join WhatsApp group |
+| Primary CTA | Join Telegram |
 | Secondary CTA | Prompt Anatomy → |
 | Footer H3 | Good luck with your prompts |
 | Footer reminder | If the prompt has [COMPANY] or [MY ROLE] – replace with your details. The AI role (e.g. “critical analyst”) is already set – no need to change it. |
@@ -133,7 +133,7 @@
 - **Value-first hero:** “Let AI do 30–50% of your daily tasks” is clear and benefit-led.
 - **Scannable structure:** Sections (What you get, How to use, prompts, What’s next) are easy to scan.
 - **Consistent pattern:** Each prompt card uses the same “Before using” / “What to do” structure.
-- **Action-oriented CTAs:** “Start for free”, “Copy prompt”, “Join WhatsApp group” state the action.
+- **Action-oriented CTAs:** “Start for free”, “Copy prompt”, “Join Telegram” state the action.
 - **Time framing:** “~3–5 min per step” and “In 30 minutes” set expectations.
 - **Progress copy:** “You’ve used X of 8 prompts” and “Great – you’ve used all 8” support motivation.
 
@@ -173,7 +173,7 @@
 | Code block | “Select and copy prompt N” | Good. |
 | Copy button | “Copy prompt N to clipboard” | Good. |
 | Success | “Prompt copied successfully” | Good. |
-| Community primary CTA | “Open Prompt Anatomy WhatsApp group in new tab” | Slightly wrong (it’s “Prompt Anatomy” product but the group may have another name). Consider: “Join Prompt Anatomy WhatsApp group (opens in new tab)”. |
+| Community primary CTA | “Open Prompt Anatomy Telegram channel in new tab” | Ensure the visible CTA matches the destination (Telegram channel vs group) and keep “opens in new tab” language consistent with other external links. |
 | Progress bar | `aria-label="Progress"` | Optional: “Progress: X of 8 prompts used” for more context. |
 
 #### E. Consistency with product naming

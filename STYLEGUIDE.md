@@ -112,11 +112,11 @@
 
 ### 4.7 Bendruomenė (community) CTA
 
-- **Hierarchija:** vienas pagrindinis CTA (WhatsApp), antrinis – outline („Promptų anatomija“). Jokio glow – tik subtilus šešėlis.
+- **Hierarchija:** vienas pagrindinis CTA (Telegram), antrinis – outline („Promptų anatomija“). Jokio glow – tik subtilus šešėlis.
 - **Pagrindinis CTA (`.community-cta-primary`):** vienas brand green – `--community-cta-green: #0E7A33`, hover `--community-cta-green-hover: #0B6B2D`. Šešėlis: `0 6px 16px rgba(0,0,0,0.12)` (be glow). `border-radius: 12px`, font 18px / 600. Hover: `scale(1.02)`. Focus-visible – `outline 3px var(--accent-gold)`.
 - **Antrinis CTA (`.community-cta-secondary`):** outline stilius – `border: 2px solid var(--accent-dark)`, permatomas fonas, `margin-top: 16px`. Hover – šviesus fonas (`--blue-light`).
 - **Kortelė:** `border: 1px solid var(--border)`, `border-radius: 16px`, šviesus šešėlis. Vertikalūs tarpai: h2 → 16px → subtext → 24px → primary CTA → 16px → secondary link.
-- **Antraštė:** dvi eilutės („Nori daugiau?“ / „Prisijunk prie WhatsApp grupės.“) – mažesnis skaitymo tankis.
+- **Antraštė:** dvi eilutės („Nori daugiau?“ / „Prisijunk Telegram.“) – mažesnis skaitymo tankis.
 
 ---
 
